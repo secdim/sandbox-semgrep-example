@@ -13,7 +13,7 @@ jobs:
       - name: Install Semgrep
         run: pip install semgrep
       - name: Run Semgrep
-        run: semgrep --sarif -o findings.sarif .
+        run: semgrep scan --config auto --sarif > findings.sarif  
       - name: Upload SARIF results
         uses: github/codeql-action/upload-sarif@v1
         with:
