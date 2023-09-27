@@ -1,30 +1,38 @@
-name: Sandbox Example Workflow
+name: SecDim Sandbox Example Workflow
 on:
   push:
     branches:
       - master
   pull_request:
 jobs:
-  semgrep:
+  secdim:
     runs-on: ubuntu-latest
     permissions:
       security-events: write
       actions: read
       contents: read
     steps:
-      # - name: Checkout Code
-      #   uses: actions/checkout@v2
       - name: Clone repo
         uses: actions/checkout@master
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: "3.7"
+
       - name: Install Semgrep
         run: pip install semgrep
+
       - name: Run Semgrep
-        run: semgrep scan --config auto --sarif > findings.sarif  
+        run: semgrep scan --config auto --sarif > findings.sarif
+
+      - name: Run SecDim Sandbox Action
+        uses: secdim/sandbox-action@v0.1-beta
+        with:
+          input_sarif_file: findings.sarif
+          output_sarif_file: findings.processed.sarif
+
       - name: Upload SARIF results
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: findings.sarif
+          sarif_file: findings.processed.sarif
