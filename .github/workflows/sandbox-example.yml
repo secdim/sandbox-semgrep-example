@@ -1,11 +1,17 @@
 name: Sandbox Example Workflow
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 jobs:
   semgrep:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
+      # - name: Checkout Code
+      #   uses: actions/checkout@v2
+      - name: Clone repo
+        uses: actions/checkout@master
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
