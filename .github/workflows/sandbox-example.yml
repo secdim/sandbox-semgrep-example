@@ -1,0 +1,20 @@
+name: Sandbox Example Workflow
+on: [push]
+jobs:
+  semgrep:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.7"
+      - name: Install Semgrep
+        run: pip install semgrep
+      - name: Run Semgrep
+        run: semgrep --sarif -o findings.sarif .
+      - name: Upload SARIF results
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: findings.sarif
