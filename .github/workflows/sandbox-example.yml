@@ -30,6 +30,7 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: findings.sarif
+          category: semgrep
 
       - name: Run SecDim Sandbox Action
         uses: secdim/sandbox-action@v0.1.6-beta
@@ -41,3 +42,4 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: findings.processed.sarif
+          category: secdim-sandbox
