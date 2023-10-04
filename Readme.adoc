@@ -1,4 +1,4 @@
-= SecDim's Defensive Programming challenge
+= SecDim's Defensive Programming challenge 
 Python 
 
 == Objective
