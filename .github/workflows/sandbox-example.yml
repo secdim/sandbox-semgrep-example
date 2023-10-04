@@ -27,7 +27,7 @@ jobs:
         run: semgrep scan --config auto --sarif > findings.sarif
 
       - name: Run SecDim Sandbox Action
-        uses: secdim/sandbox-action@v0.1.5-beta
+        uses: secdim/sandbox-action@v0.1.6-beta
         with:
           input_sarif_file: findings.sarif
           output_sarif_file: findings.processed.sarif
