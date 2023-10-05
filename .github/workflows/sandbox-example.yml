@@ -33,7 +33,7 @@ jobs:
           category: semgrep
 
       - name: Run SecDim Sandbox Action
-        uses: secdim/sandbox-action@v0.1.7-beta
+        uses: secdim/sandbox-action@v1.0.0
         with:
           input_sarif_file: findings.sarif
           output_sarif_file: findings.processed.sarif
@@ -42,4 +42,4 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: findings.processed.sarif
-          category: secdim-sandbox 
+          category: secdim-sandbox
