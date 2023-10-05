@@ -1,9 +1,9 @@
-= SecDim Sandbox GitHub Action Example Repo
+= SecDim Sandbox Example Repo
 
-This is an example repository for https://github.com/marketplace/actions/secdim-sandbox-sarif-parser[SecDim Sandbox GitHub Action]. 
+This is an example repository for https://github.com/marketplace/actions/secdim-sandbox-sarif-parser[SecDim Sandbox]. 
 
-It contains a simple web application with a few security vulnerability. The `sandbox-example.yml` file contains a GitHub Action workflow that will demonstrate the SecDim Sandbox GitHub Action working. On a push to the master branch, or a pull request, a Docker container will be built and run in the GitHub Action workflow. The container will run Semgrep to analyse the security vulnerabilities of the application. This is uploaded the the repository. 
+It contains a simple web application with a few security vulnerabilities. The `sandbox-example.yml` file contains a GitHub Action workflow that will demonstrate the SecDim Sandbox working. On a push to the master branch, or a pull request, a Docker container will be built and run in the GitHub Action workflow. The container will run Semgrep to analyse the security vulnerabilities of the application. This is uploaded the the repository. 
 
-The SecDim Sandbox GitHub Action will then parse the Semgrep results SARIF file and output a SARIF file which will be uploaded to the repository. This SARIF file will contain a link to the relevant security vulnerability to explore and debug. The results of both the SecDim Sanbox GitHub Action and Semgrep will be available to view in the GitHub repository's Security tab. 
+The SecDim Sandbox will then parse the Semgrep results SARIF file and output a SARIF file which will be uploaded to the repository. This SARIF file will contain a link to the relevant security vulnerability to explore and debug. The results of both SecDim Sandbox and Semgrep will be available to view in the GitHub repository's Security tab. 
 
 Feel free to clone the repository and try it out for yourself.
