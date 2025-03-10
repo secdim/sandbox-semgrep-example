@@ -18,7 +18,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: "3.7"
+          python-version: "3.10"
 
       - name: Install Semgrep
         run: pip install semgrep
@@ -27,7 +27,7 @@ jobs:
         run: semgrep scan --config auto --sarif > findings.sarif
 
       - name: Upload Semgrep SARIF results
-        uses: github/codeql-action/upload-sarif@v2
+        uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: findings.sarif
           category: semgrep
@@ -39,7 +39,7 @@ jobs:
           output_sarif_file: findings.processed.sarif
 
       - name: Upload SecDim Sanbox SARIF results
-        uses: github/codeql-action/upload-sarif@v2
+        uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: findings.processed.sarif
           category: secdim-sandbox
