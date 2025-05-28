@@ -1,6 +1,8 @@
-= SecDim Sandbox Example Repo
+= SecDim and Semgrep Integration Example
 
-This is an example repository for https://github.com/marketplace/actions/secdim-sandbox-sarif-parser[SecDim Sandbox]. See the sample output in the screenshots below.
+This is an example repository for
+https://github.com/marketplace/actions/secure-coding-wargame[SecDim Sandbox – The Secure Code Learning Wargame].
+See the sample output in the screenshots below.
 
 image::images/secdim-sandbox-cloud.png[]
 
